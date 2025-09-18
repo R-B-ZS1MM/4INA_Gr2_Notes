@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Jak podpiąć skrypt JS do pliku HTML?
+
+// Zacznijmy od fundamentów – aby skrypt mógł poprawnie wykonać powierzone mu zadania,
+// należy go poprawnie dołączyć (zainkludować) do dokumentu HTML. Istnieją dwa podstawowe
+// sposoby osadzenia kodu JS w dokumencie HTML, a ponadto mamy do dyspozycji dwa atrybuty
+// async oraz defer, które kontrolują sposób wczytywania skryptu przez przeglądarkę.
+
+// 1. Skrypt umieszczony w pliku HTML
+// Najprostsza metoda wywołania kodu JS to umieszczenie tych linii bezpośrednio w pliku
+// HTML (*.html lub *.htm) wewnątrz podwójnych tagów <script>. Dlaczego podwójnych?
+// Bo przeglądarka musi wiedzieć, gdzie zaczyna się skrypt i gdzie kończy, czyli kiedy
+// następuje powrót do HTML.
+
+// Największą zaletą jest szybkość wstawienia kodu – nie musimy tworzyć osobnego pliku
+// *.js. Wadą jest brak separacji kodu i trudność wielokrotnego użycia danego skryptu,
+// bo kod w zewnętrznym pliku *.js można podpiąć do wielu podstron.
+
+// Na egzaminie INF.03 nie stosujemy tego rozwiązania, chyba że arkusz wymaga inaczej.
+// Pokazujemy świadomość separacji kodu HTML i JS.
+
+// 2. Skrypt osadzony z zewnętrznego pliku
+// Do dokumentu HTML podpinamy skrypt zewnętrzny:
+<script src="skrypt.js"></script>
+
+// Taki sposób zapewnia lepszą organizację i separację kodu. Współczesne przeglądarki
+// często cache’ują skrypty używane między podstronami, co jest możliwe tylko w zewnętrznych plikach.
+
+// W Visual Studio Code dzięki Emmet można szybko wstawić:
+// script:src
+// co tworzy tag <script> z kursorem w atrybucie src.
+
+// W HTML5 nie trzeba podawać type="text/javascript", bo JS jest domyślny.
+
+// Rekomenduje się podpinanie skryptów na końcu <body>, bo wówczas strona załaduje
+// się w całości przed wykonaniem JS. Wyjątki to np. skrypty analityki lub reklamy Google.
+
+// 3. Atrybut async – wykonywanie skryptu asynchronicznie
+// Domyślnie przeglądarka zatrzymuje wczytywanie strony aż skrypt się załaduje i wykona.
+// Jeżeli plik jest “ciężki”, użytkownik może odczuwać opóźnienie w renderowaniu strony.
+
+// Atrybut async pozwala ładować skrypt w tle, nie zatrzymując parsowania HTML:
+<script src="skrypt.js" async></script>
+
+// Skrypt wykonuje się zaraz po pobraniu, nawet jeśli HTML nie jest w pełni przetworzony.
+// Async jest dobre dla skryptów niezależnych od DOM (np. analityka). Niebezpieczne,
+// jeśli skrypt modyfikuje elementy DOM, bo mogą jeszcze nie istnieć.
+
+// 4. Atrybut defer – wykonanie skryptu po załadowaniu strony
+<script src="skrypt.js" defer></script>
+
+// Defer powoduje pobranie skryptu równolegle z HTML, ale wykonanie dopiero po pełnym
+// załadowaniu dokumentu. Dzięki temu elementy DOM na pewno istnieją i można je bezpiecznie
+// modyfikować.
+
+// 5. Podsumowanie najlepszych praktyk
+// - Sekcja <head> + async: skrypt pobiera się w tle, wykona się przed zakończeniem renderowania DOM.
+//   Dobre dla niezależnych skryptów (np. statystyki, reklamy).
+// - Koniec <body>: klasyczne podpięcie, skrypt ładuje się po większości HTML. Najbezpieczniejsze dla manipulacji DOM.
+// - Sekcja <head> + defer: pobieranie w tle, wykonanie po załadowaniu HTML. Dobre dla skryptów operujących na elementach DOM.
+
+// Podsumowując, na egzaminie INF.03 najlepiej:
+// - stosować zewnętrzne pliki JS,
+// - podpiąć je pod koniec <body>,
+// - nie używać async do skryptów manipulujących DOM.
+
+// Egzaminacyjny klasyk: podpięcie skryptu na końcu <body> – "usually you can’t go wrong with this one".
+
+    </script>
+</body>
+</html>

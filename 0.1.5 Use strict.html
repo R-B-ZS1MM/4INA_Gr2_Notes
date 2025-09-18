@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // "use strict" w JavaScript
+      //
+      // "use strict" to specjalny tryb w JavaScript, który wprowadza bardziej restrykcyjne
+      // zasady w interpretacji kodu. Pozwala wykrywać błędy, które normalnie byłyby ignorowane
+      // przez przeglądarkę, co pomaga pisać bezpieczniejszy i bardziej przewidywalny kod.
+      //
+      // Główne cechy trybu strict:
+      //
+      // 1. Zabrania używania niezadeklarowanych zmiennych.
+      //    W normalnym JS, przypisanie do niezadeklarowanej zmiennej tworzy ją automatycznie
+      //    w globalnym obiekcie. W strict mode spowoduje to błąd.
+      //
+      // 2. Nie pozwala na nadpisywanie wartości stałych (const) lub właściwości niekonfigurowalnych.
+      //
+      // 3. Zakazuje używania niektórych zastrzeżonych słów kluczowych, np. "eval" czy "arguments"
+      //    w niepoprawny sposób.
+      //
+      // 4. Funkcje muszą być deklarowane poprawnie – np. nie można deklarować dwóch parametrów
+      //    o tej samej nazwie.
+      //
+      // Jak włączyć strict mode:
+      //
+      // 1. Dla całego skryptu:
+      //    Na początku pliku JS należy wpisać:
+
+      "use strict";
+
+      // 2. Dla pojedynczej funkcji:
+
+      function mojaFunkcja() {
+        "use strict";
+        // kod funkcji
+      }
+
+      // Korzyści ze stosowania strict mode:
+      //
+      // - Wykrywa potencjalne błędy wcześniej (np. literówki w nazwach zmiennych)
+      // - Zmniejsza ryzyko przypadkowego nadpisania globalnych zmiennych
+      // - Ułatwia optymalizację kodu przez silnik JS
+      //
+      // Podsumowując, "use strict" jest zalecany w nowych projektach JS i przy nauce,
+      // ponieważ wymusza dobre praktyki i pomaga unikać typowych błędów programistycznych.
+    </script>
+  </body>
+</html>

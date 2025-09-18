@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Tworzenie zmiennych w JavaScript
+      //
+      // W tej części omówimy deklarację zmiennych w JavaScript. Zapoznamy się z pierwszymi
+      // pułapkami i dowiemy się, kiedy używać var, const, a kiedy let.
+
+      // Deklaracja zmiennych
+      //
+      // W JavaScript możemy deklarować zmienne za pomocą trzech słów kluczowych: var, const, let.
+      // Od zawsze był var, natomiast const i let pojawiały się wraz ze standardem ECMAScript 6,
+      // co unowocześniło język i pozwoliło na szybszy rozwój.
+
+      // Nazwy zmiennych mają ograniczenia: nie możemy używać słów kluczowych JavaScript.
+      // Najlepiej używać znaków alfanumerycznych (a-z, A-Z, 0-9), $ oraz _.
+      // Przykładem konwencji jest camelCase.
+
+      // Deklaracja zmiennych:
+      var bird = "a bird";
+      const cat = "a cat";
+      let myDog = "my dog";
+
+      // Można też deklarować wiele zmiennych jednocześnie:
+      const a1 = "1",
+        a2 = "2",
+        a3 = "3";
+
+      const b1 = 1,
+        b2 = 2,
+        b3 = 3;
+
+      // Wyświetlanie zmiennych w konsoli:
+      console.log(bird);
+      console.log(cat);
+      console.log(myDog);
+
+      // Deklaracja zmiennej bez przypisanej wartości
+      let salary;
+      console.log(salary); // undefined
+      // Zmienna bez wartości przechowuje undefined, a nie null.
+
+      // Różnice między var, const i let
+      //
+      // Zmienne var
+      // Var jest przestarzałe i niezalecane. Problemy var:
+      // 1. Redeklaracja zmiennej jest możliwa:
+      var hello = "hi";
+      var hello = "hey";
+      console.log(hello); // wyświetli 'hey'
+
+      // 2. Zakres var: globalny lub funkcyjny
+      if (true) {
+        var name = "My name is Neo";
+        const name2 = "My name is James Bond";
+      }
+      console.log(name); // działa
+      // console.log(name2); // błąd
+
+      // 3. Przypisanie wartości przed deklaracją:
+      day = "Monday";
+      var day;
+      console.log(day); // 'Monday'
+      // Hoisting: deklaracje var są przenoszone na początek kodu/funkcji
+
+      // Zmienne const
+      //
+      // Używamy do wartości, które się nie zmienią:
+      const pi = 3.14;
+      // pi = 3.17; // błąd
+
+      // Trzeba od razu przypisać wartość przy deklaracji:
+      //const city; // błąd
+
+      // Obiekty z const: referencja nie może się zmienić, ale zawartość obiektu tak
+      const settings = {};
+      settings.host = "localhost"; // działa
+      // settings = {}; // błąd
+
+      // Zmienne let
+      //
+      // Najbardziej intuicyjna forma, można przypisywać później, zmieniać wartość:
+      let color;
+      color = "red";
+
+      let number = 41;
+      number = 42;
+
+      // let i const mają zakres blokowy
+      {
+        const one = 1;
+        let two = 2;
+      }
+      // console.log(one, two); // błąd
+
+      // Kiedy używać var, const, let
+      //
+      // Var: nie używamy.
+      // Const: używamy zawsze, gdy wartość nie będzie się zmieniać, np. stałe, konfiguracje.
+      // Let: gdy musimy przypisać wartość później lub w pętli.
+
+      // Co warto zapamiętać:
+      // - do deklaracji zmiennych używamy const i let
+      // - var jest przestarzałe i może powodować nieoczekiwane działanie kodu
+      // - const używamy jak najczęściej, let w pozostałych przypadkach
+      // - const do stałych wartości
+      
+    </script>
+  </body>
+</html>

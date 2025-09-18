@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Okna dialogowe w JavaScript pozwalają na interakcję z użytkownikiem poprzez wyświetlanie komunikatów lub pobieranie danych.
+        // Najczęściej używane są trzy typy okien dialogowych:
+        // 1. alert() - wyświetla prosty komunikat z przyciskiem OK.
+        // 2. confirm() - wyświetla komunikat z przyciskami OK i Anuluj, zwraca true lub false w zależności od wyboru użytkownika.
+        // 3. prompt() - wyświetla komunikat z polem do wpisania tekstu oraz przyciskami OK i Anuluj, zwraca wpisany tekst lub null.
+
+        // Przykłady użycia:
+
+        // Okno alert
+        alert("To jest okno alert!");
+
+        // Okno confirm
+        if (confirm("Czy chcesz kontynuować?")) {
+            alert("Wybrałeś OK.");
+        } else {
+            alert("Wybrałeś Anuluj.");
+        }
+
+        // Okno prompt
+        let imie = prompt("Podaj swoje imię:", "Kunegunda");
+        if (imie !== "") {
+            alert("Witaj, " + imie + "!");
+        } else {
+            alert("Nie podałeś imienia.");
+        }
+    </script>
+</body>
+</html>
