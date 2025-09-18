@@ -1,191 +1,210 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math i Number obiekt w JS i podstawowe funkcje</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obiekt Math i Number</title>
+    <link rel="icon" href="favicon.svg" />
+  </head>
+  <body>
+    <h1>Obiekt Math i Number</h1>
+    <em>Otwórz plik HTML w edytorze kodu żeby zobaczyć info</em>
     <script>
-        /*
-===========================
-Obiekt Math
-===========================
+      /***********************************************/
+      //Właściwości i metody obiektu Math w JavaScript:
+      /***********************************************/
 
-Stałe i liczby specjalne
-- Math.PI – liczba π ≈ 3.14159
-*/
-console.log(Math.PI); // 3.141592653589793
-/*
-- Math.E – liczba Eulera ≈ 2.718
-*/
-console.log(Math.E); // 2.718281828459045
+      //Właściwości:***********************************************
+      console.log(Math.PI); // liczba pi (ok. 3,141)
+      console.log(Math.SQRT1_2); // pierwiastek kwadratowy z 1/2 (ok. 0,707)
+      console.log(Math.SQRT2); // pierwiastek kwadratowy z 2 (ok. 1,414)*/
+      console.log(Math.E); // liczba Eulera (ok. 2,718)
+      console.log(Math.LN2); // naturalny logarytm z 2 (ok. 0,693)
+      console.log(Math.LN10); // naturalny logarytm z 10 (ok. 2,303)
 
-/*
-Podstawowe funkcje matematyczne
-- Math.abs(x) – wartość bezwzględna liczby x
-*/
-console.log(Math.abs(-7)); // 7
-/*
-- Math.sign(x) – znak liczby: 1 dla dodatnich, -1 dla ujemnych, 0 dla zera
-*/
-console.log(Math.sign(-10)); // -1
-console.log(Math.sign(0));   // 0
-console.log(Math.sign(5));   // 1
+      //Metody:*****************************************************
 
-/*
-Zaokrąglanie liczb
-- Math.round(x) – zaokrągla do najbliższej liczby całkowitej
-*/
-console.log(Math.round(4.7)); // 5
-/*
-- Math.ceil(x) – zawsze zaokrągla w górę
-*/
-console.log(Math.ceil(4.1)); // 5
-/*
-- Math.floor(x) – zawsze zaokrągla w dół
-*/
-console.log(Math.floor(4.9)); // 4
-/*
-- Math.trunc(x) – usuwa część ułamkową liczby
-*/
-console.log(Math.trunc(4.9));  // 4
-console.log(Math.trunc(-4.9)); // -4
+      //Math.abs(x) - wartość bezwzględna liczby x
+      console.log(Math.abs(-1.3)); //1.3
 
-/*
-Potęgi i pierwiastki
-- Math.pow(x, y) – podnosi x do potęgi y
-*/
-console.log(Math.pow(2, 3)); // 8
-// albo:
-console.log(2 ** 3);
-/*
-- Math.sqrt(x) – pierwiastek kwadratowy liczby x
-*/
-console.log(Math.sqrt(16)); // 4
-/*
-- Math.cbrt(x) – pierwiastek sześcienny liczby x
-*/
-console.log(Math.cbrt(27)); // 3
+      //Math.round(x) - zaokrąglenie liczby x do najbliższej liczby całkowitej
+      console.log(Math.round(3.67)); //4
 
-/*
-Ekstrema i losowanie
-- Math.max(...liczby) – największa liczba spośród podanych
-*/
-console.log(Math.max(3, 7, 1)); // 7
-/*
-- Math.min(...liczby) – najmniejsza liczba spośród podanych
-*/
-console.log(Math.min(3, 7, 1)); // 1
-/*
-- Math.random() – losowa liczba zmiennoprzecinkowa [0,1)
-*/
-console.log(Math.random()); // np. 0.7321
+      //Math.ceil(x) - najmniejsza liczba całkowita większa lub równa x
+      console.log(Math.ceil(3.23)); //4
+      console.log(Math.ceil(-5.8)); //-5
 
-/*
-===========================
-Obiekt Number i metody liczbowe
-===========================
+      //Math.floor(x) - największa liczba całkowita mniejsza lub równa x
+      console.log(Math.floor(5.899)); //5
+      console.log(Math.floor(-5.8)); //-6
 
-Sprawdzanie wartości
-- Number.MAX_VALUE – największa możliwa liczba w JS
-*/
-console.log(Number.MAX_VALUE.toLocaleString());
-/*
-- isNaN(x) – sprawdza czy wartość x nie jest liczbą
-*/
-console.log(isNaN(10));    // false
-console.log(isNaN("abc")); // true
-/*
-- Number.isInteger(x) – sprawdza czy x jest liczbą całkowitą
-*/
-console.log(Number.isInteger(10));   // true
-console.log(Number.isInteger(10.5)); // false
+      //Math.trunc(x) - - zwraca całkowitą część liczby x, usuwając część ułamkową
+      console.log(Math.trunc(-5.8)); //-5
 
-/*
-Formatowanie liczb
-- toFixed(n) – liczba miejsc po przecinku
-*/
-let pi = 3.14159;
-console.log(pi.toFixed(2)); // "3.14"
-/*
-- toPrecision(n) – liczba cyfr znaczących
-*/
-console.log(pi.toPrecision(3)); // "3.14"
-/*
-- toExponential(n) – zapis wykładniczy z n cyfr po przecinku
-*/
-console.log(pi.toExponential(2)); // "3.14e+0"
+      //Math.pow(x, y) - potęga liczby x do wykładnika y
+      console.log(Math.pow(2, 3)); //8
 
-/*
-Konwersja do stringów
-- toString() – zamienia liczbę na string
-*/
-let x = 255;
-console.log(x.toString()); // "255"
-/*
-- toString(radix) – zamiana liczby na system liczbowy o podstawie radix
-*/
-console.log(x.toString(16)); // "ff"
-console.log(x.toString(2));  // "11111111"
+      //możemy również:
+      x = 2;
+      console.log(x ** 2); //4
+      console.log(x ** 4); //16
+      x **= 3;
+      console.log(x);
 
+      //Math.sqrt(x) - pierwiastek kwadratowy liczby x
+      console.log(Math.sqrt(16)); //4
 
-===========================
-Konwersje typów
-===========================
+      //Math.cbrt(x) - zwraca pierwiastek sześcienny liczby x
+      console.log(Math.cbrt(27)); //3
 
-- Boolean(x) – konwertuje wartość x na typ logiczny
-*/
-console.log(Boolean(0));   // false
-console.log(Boolean(123)); // true
-/*
-- String(x) – konwertuje wartość x na string
-*/
-console.log(String(123)); // "123"
-/*
-- Number(x) – konwertuje wartość x na liczbę
-*/
-console.log(Number("123")); // 123
-/*
-- parseInt(x, radix) – konwersja stringa na liczbę całkowitą w systemie radix
-*/
-console.log(parseInt("11", 2)); // 3
-/*
-- parseFloat(x) – konwersja stringa na liczbę zmiennoprzecinkową
-*/
-console.log(parseFloat("3.14")); // 3.14
+      //Math.max(a, b,...) - największa liczba spośród argumentów
+      console.log(Math.max(2, 3, 7, -5, 1.2, 2, 3)); //7
+      console.log(Math.max(...[1, 3, 4, 5, -1, 4, 2, 0])); //5
 
-/*
-===========================
-Operator typeof
-===========================
+      //Math.min(a, b,...) - najmniejsza liczba spośród argumentów
+      console.log(Math.min(1, 2, 3, -2, 6, 5)); //-2
 
-- typeof x – zwraca typ zmiennej
-*/
-console.log(typeof 42);        // "number"
-console.log(typeof "abc");     // "string"
-console.log(typeof true);      // "boolean"
-console.log(typeof {});        // "object"
-console.log(typeof undefined); // "undefined"
+      //Math.random() - losowa liczba z przedziału [0, 1)
+      console.log(Math.random());
+      console.log(Math.floor(Math.random() * 50)); //0-49
+      console.log(Math.floor(Math.random() * 49) + 1); //1-49
 
-/*
-===========================
-Wyświetlanie w konsoli
-===========================
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      // Przykład użycia:
+      let randomNum = getRandomInt(12, 123);
+      console.log(randomNum);
 
-- console.log() – standardowe wyświetlanie
-*/
-console.log("Hello World"); // Hello World
-/*
-- console.dir() – wyświetla obiekt w formie drzewa
-*/
-console.dir(document.body);
-/*
-- console.table() – wyświetla dane w formie tabeli
-*/
-let users = [{name: "Alice", age: 25}, {name: "Bob", age: 30}];
-console.table(users);
+      console.log(Math.floor(Math.random() * (8 - 5 + 1) + 5)); //od 5 do 8
 
+      //Math.sign(x): Zwraca znak liczby x, czyli 1, -1 lub 0 w zależności od tego, czy x jest dodatnie, ujemne lub zero.
+      console.log(Math.sign(123.4)); //1
+      console.log(Math.sign(0)); //0
+      console.log(Math.sign(-5)); //-1
+
+      //Math.log(x) - naturalny logarytm liczby x
+      //Math.acos(x) - arcus cosinus liczby x (w radianach)
+      //Math.asin(x) - arcus sinus liczby x (w radianach)
+      //Math.atan(x) - arcus tangens liczby x (w radianach)
+      //Math.atan2(y, x) - arcus tangens liczby y/x (w radianach)
+      //Math.cos(x) - cosinus liczby x (w radianach)
+      //Math.exp(x) - eksponenta liczby x
+      //Math.sin(x) - sinus liczby x (w radianach)
+      //Math.tan(x) - tangens liczby x (w radianach)*/
+
+      //Math.log2(x) - zwraca logarytm liczby x o podstawie 2.
+      console.log(Math.log2(16)); //4
+
+      //Math.log10(x) - zwraca logarytm liczby x o podstawie 10.
+      console.log(Math.log10(1000)); //3
+
+      /***********************************************/
+      //Właściwości i metody Number w JavaScript:
+      /***********************************************/
+      //W JavaScript, Number jest typem danych, który reprezentuje liczbę. Obiekt Number ma wiele własności i metod, które pozwalają na różne operacje na liczbach.
+
+      //*******************************
+      //          Właściwości:
+      //*******************************
+
+      //MAX_VALUE: Największa możliwa wartość liczby w JavaScript (approx. 1.7976931348623157e+308).
+      console.log(Number.MAX_VALUE); //1.7976931348623157e+308
+
+      //MIN_VALUE: Najmniejsza możliwa wartość liczby w JavaScript (approx. 5e-324).
+      console.log(Number.MIN_VALUE); //5e-324
+
+      //NaN (Not a Number): Specjalna wartość reprezentująca nieprawidłową lub niezdefiniowaną liczbę.
+      console.log(Number.NaN);
+
+      //NEGATIVE_INFINITY: Specjalna wartość reprezentująca minus nieskończoność.
+
+      //POSITIVE_INFINITY: Specjalna wartość reprezentująca plus nieskończoność.
+
+      //*******************************
+      //          Metody:
+      //*******************************
+
+      //toString([radix]): Zwraca string reprezentujący liczbę w systemie liczbowym o podstawie radix (domyślnie 10).
+      let num = 17;
+      console.log(num.toString());
+      console.log(num.toString(2));
+
+      //valueOf(): Zwraca wartość liczbową obiektu Number.
+
+      //toFixed([digits]): Zwraca string reprezentujący liczbę z określoną liczbą cyfr po przecinku.
+
+      //toPrecision([precision]): Zwraca string reprezentujący liczbę z określoną liczbą cyfr znaczących.
+
+      //toExponential([fractionDigits]): Zwraca string reprezentujący liczbę w notacji naukowej.
+      num = 12345;
+      let exp = num.toExponential(4);
+      console.log(num, exp);
+
+      //isNaN(): Zwraca true, jeśli liczba jest nieprawidłowa lub niezdefiniowana (NaN).
+
+      //isFinite(): Zwraca true, jeśli liczba jest skończona i nie jest równa nieskończoności.
+      num = 10 / 3;
+      console.log(Number.isFinite(num));
+
+      //isInteger(): Zwraca true, jeśli liczba jest całkowita.
+
+      //isSafeInteger(): Zwraca true, jeśli liczba jest całkowita i mieści się w zakresie bezpiecznym (od -2^53 do 2^53).
+
+      /***************************************************
+     // Sposoby konwertowania ciągu znaków (string) na liczby
+     ***************************************************/
+
+      //1. Za pomocą konstruktora Number:
+      let str = "123";
+      num = Number(str);
+      console.log(num); // 123
+
+      //2. Za pomocą funkcji parseInt na liczbę cakowitą:
+      str = "123";
+      num = parseInt(str);
+      console.log(num); // 123
+      //Funkcja parseInt() może przyjmować drugi argument, który określa podstawę systemu liczbowego.
+      str = "101";
+      num = parseInt(str, 2);
+      console.log(num); // 5
+
+      str = "FF";
+      num = parseInt(str, 16);
+      console.log(num); // 255
+
+      //3. Za pomocą funkcji parseFloat na liczbę zmiennoprzecinkową:
+      str = "3.14";
+      num = parseFloat(str);
+      console.log(num); // 3.14
+
+      //4. Za pomocą operatora + (Unarny operator dodawania):
+      str = "123";
+      num = +str;
+      console.log(num); // 123
+
+      //5. Poprzez mnożenie lub dzielenie stringa przez 1:
+      str = "123";
+      num = str * 1;
+      console.log(num); // 123
+
+      /***************************************************
+   // Konwersja z liczby na ciąg znaków (string)
+   ***************************************************/
+      //1. Metoda toString():
+      num = 123;
+      str = num.toString();
+      console.log(str); // "123"
+
+      //2. Konkatenacja z pustym ciągiem '':
+      num = 123;
+      str = num + "";
+      console.log(str); // "123"
+
+      //3. Za pomocą konstruktora String:
+      num = 123;
+      str = String(num);
+      console.log(str); // "123"
     </script>
-</body>
+  </body>
 </html>
